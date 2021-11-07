@@ -40,7 +40,7 @@ jobs:
       - name: Update values.yaml & Pull Request to Config Repository
         run: |
           # GitHubログイン
-          echo -e "machine github.com\nlogin ${{ secrets.GH_USERNAME }}\npassword ${{ secrets.GH_PASSWORD }}" > ~/.netrc
+          echo -e "machine github.com\nlogin ${{ secrets.GH_USERNAME }}\npassword ${{ secrets.PERSONAL_ACCESS_TOKEN }}" > ~/.netrc
           # 「k8s-config-sample」リポジトリからクローン
           git clone https://github.com/${{ secrets.GH_USERNAME }}/k8s-config-sample.git
           # values.yamlファイルの更新処理
